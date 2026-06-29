@@ -24,5 +24,5 @@ while (x > 0):
     x = (x - 1)
 sapa('Flores')
 print('')
-print('=== Program Selesai ===')
+print('Program Selesai')
 input('Tekan Enter untuk keluar...')

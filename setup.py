@@ -30,4 +30,4 @@ for file in files:
     if not os.path.exists(file):
         open(file, 'w').close()
 
-print("✅ Semua struktur folder dan file berhasil dibuat!")
+print("Semua struktur folder dan file berhasil dibuat!")

@@ -1,0 +1,158 @@
+# ================================================
+# PROGRAM UTAMA — BahasaFlores Compiler
+# Nama   : Joseph
+# NIM    : 231011401615
+# Kelas  : 06TPLP
+# Kampus : Universitas Pamulang
+# ================================================
+
+bua faktorial(n):
+    t ada le (n == 0):
+        beri bale 1
+    yang lae:
+        beri bale n * faktorial(n - 1)
+
+bua pangkat(basis, eksponen):
+    hasil = 1
+    unto i dalam range(eksponen):
+        hasil = hasil * basis
+    beri bale hasil
+
+bua cek_genap(n):
+    t ada le (n % 2 == 0):
+        beri bale beto
+    yang lae:
+        beri bale sala
+
+bua garis():
+    bua jadi("================================")
+
+bua header(judul):
+    garis()
+    bua jadi(judul)
+    garis()
+
+# ================================================
+# INPUT
+# ================================================
+
+header("  SELAMAT DATANG DI BAHASAFLORES")
+bua jadi("  Compiler Bahasa Daerah Flores")
+bua jadi("  Teknik Kompilasi - UNPAM 2025")
+garis()
+
+bua jadi("Masukkan nama Anda:")
+nama = beri maso("> ")
+
+bua jadi("Masukkan angka pertama (1-7):")
+angka1 = beri maso("> ")
+angka1 = int(angka1)
+
+bua jadi("Masukkan angka kedua (1-7):")
+angka2 = beri maso("> ")
+angka2 = int(angka2)
+
+bua jadi("")
+bua jadi("Halo " + nama + "! Berikut semua hasil:")
+
+# ================================================
+# 1. OPERASI ARITMATIKA
+# ================================================
+
+header("  1. OPERASI ARITMATIKA")
+
+hasil_tambah = angka1 + angka2
+hasil_kurang = angka1 - angka2
+hasil_kali   = angka1 * angka2
+
+bua jadi("  " + str(angka1) + " + " + str(angka2) + " = " + str(hasil_tambah))
+bua jadi("  " + str(angka1) + " - " + str(angka2) + " = " + str(hasil_kurang))
+bua jadi("  " + str(angka1) + " x " + str(angka2) + " = " + str(hasil_kali))
+
+# ================================================
+# 2. FAKTORIAL
+# ================================================
+
+header("  2. FAKTORIAL")
+
+fakt1 = faktorial(angka1)
+fakt2 = faktorial(angka2)
+
+bua jadi("  " + str(angka1) + "! = " + str(fakt1))
+bua jadi("  " + str(angka2) + "! = " + str(fakt2))
+
+# ================================================
+# 3. PERPANGKATAN
+# ================================================
+
+header("  3. PERPANGKATAN")
+
+hasil_p1 = pangkat(angka1, 3)
+hasil_p2 = pangkat(angka2, 2)
+
+bua jadi("  " + str(angka1) + " pangkat 3 = " + str(hasil_p1))
+bua jadi("  " + str(angka2) + " pangkat 2 = " + str(hasil_p2))
+
+# ================================================
+# 4. GENAP / GANJIL
+# ================================================
+
+header("  4. GENAP / GANJIL")
+
+t ada le (cek_genap(angka1)):
+    bua jadi("  " + str(angka1) + " adalah GENAP")
+yang lae:
+    bua jadi("  " + str(angka1) + " adalah GANJIL")
+
+t ada le (cek_genap(angka2)):
+    bua jadi("  " + str(angka2) + " adalah GENAP")
+yang lae:
+    bua jadi("  " + str(angka2) + " adalah GANJIL")
+
+# ================================================
+# 5. TABEL PERKALIAN
+# ================================================
+
+header("  5. TABEL PERKALIAN " + str(angka1))
+
+unto i dalam range(10):
+    hasil_tabel = angka1 * (i + 1)
+    bua jadi("  " + str(angka1) + " x " + str(i + 1) + " = " + str(hasil_tabel))
+
+# ================================================
+# 6. CEK GENAP/GANJIL 1-10
+# ================================================
+
+header("  6. CEK GENAP/GANJIL 1-10")
+
+unto i dalam range(10):
+    angka_cek = i + 1
+    t ada le (cek_genap(angka_cek)):
+        bua jadi("  " + str(angka_cek) + " = GENAP")
+    yang lae:
+        bua jadi("  " + str(angka_cek) + " = GANJIL")
+
+# ================================================
+# 7. PERBANDINGAN
+# ================================================
+
+header("  7. PERBANDINGAN")
+
+t ada le (angka1 > angka2):
+    bua jadi("  " + str(angka1) + " lebih besar dari " + str(angka2))
+kalo ne (angka1 == angka2):
+    bua jadi("  " + str(angka1) + " sama dengan " + str(angka2))
+yang lae:
+    bua jadi("  " + str(angka1) + " lebih kecil dari " + str(angka2))
+
+# ================================================
+# PENUTUP
+# ================================================
+
+garis()
+bua jadi("  Terima kasih, " + nama + "!")
+bua jadi("  Program BahasaFlores selesai!")
+bua jadi("  Universitas Pamulang - Teknik Informatika")
+garis()
+bua jadi("")
+beri maso("Tekan Enter untuk keluar...")
